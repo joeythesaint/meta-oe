@@ -1,0 +1,3 @@
+[submodule "meta-networking"]
+	path = meta-networking
+	url = git://github.com/joeythesaint/meta-networking.git
