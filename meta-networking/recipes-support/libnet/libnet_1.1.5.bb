@@ -11,7 +11,6 @@ PR = "r0"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/libnet-dev/${PN}-${PV}.tar.gz \
            file://fix-endianess-test.patch"
-
 SRC_URI[md5sum] = "a9bc1d75a610efcfee200d3e28d8eb8f"
 SRC_URI[sha256sum] = "75588f8d1232e1df34eccf2dba5e66be197b345a07fae80d8275db994496a20d"
 
