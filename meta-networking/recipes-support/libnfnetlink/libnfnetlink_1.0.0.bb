@@ -6,7 +6,6 @@ management tools in userspace."
 HOMEPAGE = "http://www.netfilter.org/projects/libnfnetlink/index.html"
 SECTION = "devel/libs"
 LICENSE = "GPLv2+"
-
 LIC_FILES_CHKSUM = "file://Makefile.in;endline=13;md5=a44bb8f4c22793d55c5e879eec256702"
 
 SRC_URI = "http://www.netfilter.org/projects/libnfnetlink/files/libnfnetlink-${PV}.tar.bz2;name=libnfnetlink-${PV}"
