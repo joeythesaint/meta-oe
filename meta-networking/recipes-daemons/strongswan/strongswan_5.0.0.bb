@@ -11,15 +11,16 @@ SRC_URI = "http://download.strongswan.org/strongswan-${PV}.tar.bz2"
 SRC_URI[md5sum] = "c8b861305def7c0abae04f7bbefec212"
 SRC_URI[sha256sum] = "efc13c86e715b5e596d9d8535640c830f83e977fe521afd2c70d68926c4b573e"
 
-EXTRA_OECONF = "--disable-curl --disable-soup --disable-ldap \
-		--enable-gmp --disable-mysql --disable-sqlite \
-		--enable-openssl"
-
 inherit autotools
+
+EXTRA_OECONF = "--disable-curl --disable-soup --disable-ldap \
+                --enable-gmp --disable-mysql --disable-sqlite \
+                --enable-openssl"
+
+PACKAGES += "${PN}-plugins"
 
 RRECOMMENDS_${PN} = "kernel-module-ipsec"
 
-PACKAGES += "${PN}-plugins"
 FILES_${PN} += "${libdir}/ipsec/lib*${SOLIBS}"
 FILES_${PN}-dev += "${libdir}/ipsec/lib*${SOLIBSDEV} ${libdir}/ipsec/*.la"
 FILES_${PN}-staticdev += "${libdir}/ipsec/*.a"
