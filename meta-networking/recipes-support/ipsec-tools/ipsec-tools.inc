@@ -1,11 +1,16 @@
+#
+# Copyright (C) 2012 Wind River Systems, Inc.
+#
 DESCRIPTION = "IPsec-Tools is a port of KAME's IPsec utilities to the \
 Linux-2.6 IPsec implementation."
 HOMEPAGE = "http://ipsec-tools.sourceforge.net/"
 SECTION = "console/network"
-LICENSE = "BSD"
-DEPENDS = "virtual/kernel openssl readline flex"
+LICENSE = "BSD-3-Clause"
+DEPENDS = "virtual/kernel openssl readline flex bison"
 
-SRC_URI = "${SOURCEFORGE_MIRROR}/ipsec-tools/ipsec-tools-${PV}.tar.bz2;name=ipsec-tools-${PV}"
+SRC_URI = "${SOURCEFORGE_MIRROR}/ipsec-tools/ipsec-tools-${PV}.tar.bz2"
+
+INC_PR = "r1"
 
 inherit autotools
 
@@ -40,7 +45,7 @@ EXTRA_OECONF = "--with-kernel-headers=${STAGING_INCDIR} \
                 --without-libradius \
                 --without-gssapi \
                 --without-libpam \
-		--disable-security-context"
+  ${@base_contains('DISTRO_FEATURES', 'ipv6', '--enable-ipv6=yes', '', d)}"
 
 # See http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=530527
 CFLAGS += "-fno-strict-aliasing"
