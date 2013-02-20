@@ -1,0 +1,14 @@
+---
+ local/Makefile.in |    1 +
+ 1 file changed, 1 insertion(+)
+
+--- a/local/Makefile.in
++++ b/local/Makefile.in
+@@ -80,6 +80,7 @@ CONFFILES=snmpd-data/system snmpd-data/a
+ 	snmptrapd-data/snmpconf-config
+ 
+ OTHERCLEANTARGETS=snmpcheck $(SCRIPTSMADEFORPERL)
++PERL=/usr/bin/perl
+ 
+ all: $(SCRIPTSMADEFORPERL) standardall
+ 
